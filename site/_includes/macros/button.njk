@@ -1,0 +1,19 @@
+{% macro standard(id, class, attributes, text) %}
+  <button
+    id="{{ id }}"
+    class="{{ class }}"
+    {{ attributes | safe }}
+  >
+    {{ text }}
+  </button>
+{% endmacro %}
+
+{% macro link(link='#', class, attributes, text) %}
+  <a
+    href="{{ link }}"
+    class="{{ class }}"
+    {{ attributes | safe }}
+  >
+    {{ text }}
+  </a>
+{% endmacro %}

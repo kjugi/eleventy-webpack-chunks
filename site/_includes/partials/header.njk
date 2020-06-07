@@ -1,0 +1,16 @@
+{% import 'macros/heading.njk' as text %}
+
+<header class="header">
+  <a href="/" class="header__logo">
+    <img
+      src="static/logo-small.png"
+      width="64"
+    />
+
+    {{ text.heading(
+      tag='h1',
+      class='header__title',
+      text='example app'
+    ) }}
+  </a>
+</header>

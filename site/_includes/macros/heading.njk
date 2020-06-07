@@ -1,0 +1,7 @@
+{% macro heading(tag='h1', class='heading', attributes, text) %}
+  <{{ tag }} class="{{ class }}" {{ attributes | safe }}>
+    <span>
+      {{ text }}
+    </span>
+  </{{ tag }}>
+{% endmacro %}
