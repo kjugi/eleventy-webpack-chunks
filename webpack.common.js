@@ -1,18 +1,21 @@
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const bundlePerView = {
   about: './src/about.js',
   gallery: [ './src/gallery.js', './styles/gallery.css' ],
-  index:  [ './src/app.js', './styles/styles.css' ]
+  home:  [ './src/app.js', './styles/styles.css' ]
 }
 
 const entryHtmlPlugins = Object.keys(bundlePerView).map(entryName => {
+  const viewFile = (entryName === 'home') ? path.resolve(`dist/index.html`) : path.resolve(`dist/${entryName}.html`)
+
   return new HtmlWebpackPlugin({
     chunks: [entryName],
     template: path.resolve(`eleventySites/${entryName}/index.html`),
-    filename: path.resolve(`dist/${entryName}.html`)
+    filename: viewFile
   })
 })
 
@@ -28,7 +31,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      minChunks: 2
+      chunks: 'all'
     }
   },
   plugins: [
@@ -41,7 +44,8 @@ module.exports = {
       inject: false,
       template: path.resolve('eleventySites/error/index.html'),
       filename: path.resolve('dist/error.html')
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
