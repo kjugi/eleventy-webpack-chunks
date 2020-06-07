@@ -12,6 +12,10 @@ layout: base.njk
   ) }}
 
   <div class="about__content">
-    // Use data
+    {% for item in about %}
+      <p>
+        {{ item }}
+      </p>
+    {% endfor %}
   </div>
 </main>
