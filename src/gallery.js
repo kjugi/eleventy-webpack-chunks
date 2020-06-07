@@ -1,1 +1,2 @@
-console.log('gallery')
+import './app'
+import './modules/b'

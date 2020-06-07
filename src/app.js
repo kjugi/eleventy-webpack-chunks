@@ -1,1 +1,1 @@
-console.log('app')
+import './modules/a'
