@@ -12,6 +12,12 @@ layout: base.njk
   ) }}
 
   <div class="gallery__content">
-    It's empty...
+    {% for item in gallery %}
+      <img src="{{ item }}" />
+    {% endfor %}
   </div>
+
+  <p class="gallery__text">
+    Random photos from unspash.
+  </p>
 </main>
