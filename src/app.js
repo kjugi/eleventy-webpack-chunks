@@ -1,1 +1,1 @@
-import './modules/a'
+import './modules/merge'
