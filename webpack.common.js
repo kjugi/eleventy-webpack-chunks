@@ -45,7 +45,11 @@ module.exports = {
       template: path.resolve('eleventySites/error/index.html'),
       filename: path.resolve('dist/error.html')
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: [
+        '!*.html'
+      ]
+    })
   ],
   module: {
     rules: [
