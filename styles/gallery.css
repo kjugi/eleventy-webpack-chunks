@@ -1,50 +1,19 @@
-html {
-  position: relative;
-}
-
-body {
-  min-width: 320px;
-  margin: 0;
-  color: #253031;
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-*,
-*:before,
-*:after {
-  margin: 0;
-}
-
-img {
-  transition: opacity 500ms ease;
-}
-
-iframe {
-  display: block;
-}
-
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"],
-button {
-  border-radius: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .gallery__content {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
+}
+
+.gallery__content img {
+  margin: 12px;
 }
 
 @media (min-width: 768px) {
+  main {
+    padding: 0;
+  }
+
   .gallery__content img {
-    max-width: 25%;
+    max-width: calc(25% - 24px);
   }
 }
