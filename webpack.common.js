@@ -5,8 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const bundlePerView = {
   about: './src/about.js',
-  gallery: [ './src/gallery.js', './styles/gallery.css' ],
-  home:  [ './src/app.js', './styles/styles.css' ]
+  gallery: [ './src/gallery.js', './styles/gallery.css' ]
 }
 
 const entryHtmlPlugins = Object.keys(bundlePerView).map(entryName => {
@@ -23,6 +22,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
+    app: [ './src/app.js', './styles/styles.css' ],
     ...bundlePerView
   },
   output: {
