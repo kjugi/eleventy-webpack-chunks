@@ -41,9 +41,14 @@ module.exports = {
       filename: '[name].css'
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      chunks: ['app'],
+      template: path.resolve('eleventySites/index.html'),
+      filename: path.resolve('dist/index.html')
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['app'],
       template: path.resolve('eleventySites/error/index.html'),
-      filename: path.resolve('dist/error.html')
+      filename: path.resolve('dist/404.html')
     }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: [
