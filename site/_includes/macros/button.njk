@@ -10,7 +10,7 @@
 
 {% macro link(link='#', class, attributes, text) %}
   <a
-    href="{{ link }}"
+    href="{{ link | url }}"
     class="{{ class }}"
     {{ attributes | safe }}
   >

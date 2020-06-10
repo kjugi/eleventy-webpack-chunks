@@ -1,7 +1,7 @@
 {% import 'macros/heading.njk' as text %}
 
 <header class="header">
-  <a href="/" class="header__logo">
+  <a href="{{ '/' | url }}" class="header__logo">
     {{ text.heading(
       tag='h1',
       class='header__title',
