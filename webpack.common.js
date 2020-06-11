@@ -1,5 +1,4 @@
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -49,11 +48,6 @@ module.exports = {
       chunks: ['app'],
       template: path.resolve('eleventySites/error/index.html'),
       filename: path.resolve('dist/404.html')
-    }),
-    new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: [
-        '!*.html'
-      ]
     })
   ],
   module: {
