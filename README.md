@@ -42,13 +42,13 @@ However this solution requires one more trick from 11ty. We are building our `.h
 
 ## Structure of app
 
-`./src` - contains all scripts of our app. Files in the root represents views or main JS entrypoint. Files in sub directory represents modules imported in view files. Created for building vendor bundles
-`./styles` - simply contains styles for our whole app and specified styles only for gallery page
-`./site/*.njk` - files with content to our views
-`./site/error.njk` - content for 404.html page
-`./site/_includes/base.njk` - our base layout for sites
-`./site/_includes/**/*.njk` - partials and macros of example app
-`./site/_data` - here we contains predefined data for sites, can contain data fetched from API also
+- `./src` - contains all scripts of our app. Files in the root represents views or main JS entrypoint. Files in sub directory represents modules imported in view files. Created for building vendor bundles
+- `./styles` - simply contains styles for our whole app and specified styles only for gallery page
+- `./site/*.njk` - files with content to our views
+- `./site/error.njk` - content for 404.html page
+- `./site/_includes/base.njk` - our base layout for sites
+- `./site/_includes/**/*.njk` - partials and macros of example app
+- `./site/_data` - here we contains predefined data for sites, can contain data fetched from API also
 
 ## License
 
