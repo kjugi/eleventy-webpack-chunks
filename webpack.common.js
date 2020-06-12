@@ -8,12 +8,10 @@ const bundlePerView = {
 }
 
 const entryHtmlPlugins = Object.keys(bundlePerView).map(entryName => {
-  const viewFile = (entryName === 'home') ? path.resolve(`dist/index.html`) : path.resolve(`dist/${entryName}.html`)
-
   return new HtmlWebpackPlugin({
     chunks: [entryName],
     template: path.resolve(`eleventySites/${entryName}/index.html`),
-    filename: viewFile
+    filename: path.resolve(`dist/${entryName}.html`)
   })
 })
 
